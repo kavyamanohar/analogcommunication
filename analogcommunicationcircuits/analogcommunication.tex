@@ -226,10 +226,11 @@ Feed AF modulating signal (say, $f_m=1kHz$ and $E_m=150mV$) and Rf carrier (say,
 \item
 Adjust amplitude and frequencies of the AF and RF signals and observe amplitude modulated waveform on the CRO.
 \item
-Fix $f_m$ and $f_c$. Note down $E_{max}$ and $E_{min}$ of the AM signal and calculate modulation index according to the formula 
+Fix $f_m$ and $f_c$. Note down $E_{max}$ and $E_{min}$ of the AM signal and calculate modulation index according to the formula ,
 \begin{equation}
-m=\frac{E_{max}-E_{min}}{E_{max}+E_{min}}
+m=\frac{E_{max}-E_{min}}{E_{max}+E_{min}}.
 \end{equation}
+Here $E_{max}$ is the maximum of the positive envelope of the carrier and $E_{min}$ is the minimum of the positivee envelope of the carrier.
 \item
 Repeat for different values of $E_m$ and $E_c$. Observe the AM waveforms for different values of m.
 \item
@@ -247,12 +248,14 @@ Fill in the observation column
 \includegraphics[width=\textwidth]{AMmodindex.png}
 \caption{Effect of modulation index on AM}
 \end{figure}
-\noindent Fig .\ref{AMmodindex}  shows the effect of modulation index on the resultant AM wave\footnote{\url{https://commons.wikimedia.org:/wiki/File:Amplitude_Modulated_Wave-hm-64.svg}}
+\noindent Fig \ref{AMmodindex}  shows the effect of modulation index on the resultant AM wave\footnote{\url{https://commons.wikimedia.org:/wiki/File:Amplitude_Modulated_Wave-hm-64.svg}}
 \begin{center}
 
 \begin{tabular}{|l|l|l|}
 
 \hline
+ & &\\
+ 
 $E_{min}$  & $E_{max}$ & $m=\frac{E_{max}-E_{min}}{E_{max}+E_{min}}$ \\
  & & \\ \hline
  & & \\ \hline
@@ -276,28 +279,145 @@ The modulation index corresponding to $E_m=$ \textemdash \textemdash and $E_c=$ 
 
 
 \chapter[Amplitude Modulation - Detection]{Amplitude Modulation - Detection}
+\section*{Aim}
+The experiment aims at designing an AM demodulator circuit and implementing it.
+
+\section*{Theory}
+The AM signal is a high radio frequency carrier whose amplitude envelope represents a slow varying message signal, as can be seen in Fig. \ref{AMmodindex}. The process of detecting the envelope and thus regaining the message signal from the modulated carrier wave is calledd AM demodulation.
+\paragraph{}
+It can be implemented by a simple diode envelope detector to eliminate the negative half of the carrier envelope followed by a simple RC filter to remove the high frequency carrier. The result will be the low frequency envelope which is the demodulated message.
+\paragraph{}
+A diode with low junction capacitance is used in the circuit as it is has to rectify high frequency carrier.It offers low impedence at high frequency. The \textbf{RC} circuit used at the output of the diode acts as a filter. Its time constant is chosen wisely so that it is too slow to follow the high frequency of the carrier wave at the same time its fast enough to follow the low frequency message envelope. 
+
+
+\section*{Design}
+Choose high frequency diode OA79.
+
+\noindent The time period of the circuit must be much larger than the RF carrier frequency.
+
+\begin{equation}
+R_1C_1 >> T_c
+\end{equation}
+
+\begin{equation}
+R_1C_1 >> \frac{1}{f_c} = \frac{1}{2\pi\omega_c}
+\end{equation}
+
+\noindent At the same time it should be smaller than the message bandwidth. ie.,
+
+\begin{equation}
+R_1C_1<< \frac{1}{f_m}
+\end{equation}
+
+\noindent Assuming $f_c=100 kHz(T_c=.01ms)$ and $f_m=1kHz(T_m=1 ms)$,
+Let 
+\begin{equation}
+R_1C_1 = 10 X T_c =0.1 ms
+\end{equation}
+\noindent Let $C_1=.01\mu F$
+\begin{equation}
+R_1 = \frac{.1ms}{C_1} 
+\end{equation}
+\begin{equation}
+R_1 = \frac{.1ms}{0.01\mu F}=10 k\Omega. 
+\end{equation}
+\section*{Circuit Diagram}
+\section*{Procedure}
+\section*{Observation}
+\section*{Result}
+
+
+
+
+
 \chapter[Intermediate Frequency Amplifier]{Intermediate Fequency Amplifier}
+\section*{Aim}
+\section*{Theory}
+\section*{Design}
+\section*{Circuit Diagram}
+\section*{Procedure}
+\section*{Observation}
+\section*{Result}
 
 \chapter[Mixer Circuit using FET and BJT]{Mixer Circuit using FET and BJT}
+\section*{Aim}
+\section*{Theory}
+\section*{Design}
+\section*{Circuit Diagram}
+\section*{Procedure}
+\section*{Observation}
+\section*{Result}
 
 \chapter[Balanced Modulator for DSB-SC]{Balanced Modulator for DSB-SC}
-
+\section*{Aim}
+\section*{Theory}
+\section*{Design}
+\section*{Circuit Diagram}
+\section*{Procedure}
+\section*{Observation}
+\section*{Result}
 
 
 \chapter[FM generation - Reactance Modulator]{FM generation - Reactance Modulator}
-
+\section*{Aim}
+\section*{Theory}
+\section*{Design}
+\section*{Circuit Diagram}
+\section*{Procedure}
+\section*{Observation}
+\section*{Result}
 \chapter[FM Demodulation]{FM Demodulation}
+\section*{Aim}
+\section*{Theory}
+\section*{Design}
+\section*{Circuit Diagram}
+\section*{Procedure}
+\section*{Observation}
+\section*{Result}
 
 \chapter[PAM Generation and Demodulation]{PAM Generation and Demodulation}
+\section*{Aim}
+\section*{Theory}
+\section*{Design}
+\section*{Circuit Diagram}
+\section*{Procedure}
+\section*{Observation}
+\section*{Result}
 
 \chapter[Intermediate Fequency Amplifier]{Intermediate Fequency Amplifier}
+\section*{Aim}
+\section*{Theory}
+\section*{Design}
+\section*{Circuit Diagram}
+\section*{Procedure}
+\section*{Observation}
+\section*{Result}
 
 \chapter[FM Demodulation using PLL]{FM Demodulation using PLL}
+\section*{Aim}
+\section*{Theory}
+\section*{Design}
+\section*{Circuit Diagram}
+\section*{Procedure}
+\section*{Observation}
+\section*{Result}
 
 \chapter[AM generation and Demodulation]{AM generation and Demodulation}
-
+\section*{Aim}
+\section*{Theory}
+\section*{Design}
+\section*{Circuit Diagram}
+\section*{Procedure}
+\section*{Observation}
+\section*{Result}
 \chapter[SSB generation and Demodulation]{SSB generation and Demodulation}
-
+\section*{Aim}
+\section*{Theory}
+\section*{Design}
+\section*{Circuit Diagram}
+\section*{Procedure}
+\section*{Observation}
+\section*{Result}
 \begin{thebibliography}{1}
 \bibitem{ACmanual}{LABORATORY MANUAL COMMUNICATIONS LABORATORYEE 321, CALIFORNIA STATE UNIVERSITY, LOS ANGELES
 Lab-Volt Systems, Inc}
