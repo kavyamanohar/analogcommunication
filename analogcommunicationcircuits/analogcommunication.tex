@@ -2,11 +2,13 @@
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{url}
+
+
 \usepackage{fontspec}	% To change default font
-\usepackage{fancyhdr}	%to include customized footer and header
-\pagestyle{fancy}
-\lhead{}
-\chead{\leftmark}
+%\usepackage{fancyhdr}	%to include customized footer and header
+%\pagestyle{fancy}
+%\lhead{}
+%\chead{\leftmark}
 \graphicspath{{./Figures/}}
 \setmainfont{URW Palladio L} % Use if font is to be set
 
@@ -23,7 +25,7 @@
 \title{Analog Communication
 Laboratory Manual}
 \date{December 2013}
-%\author { Kavya Manohar}
+\author {Authors: Contributor-1, Contributor-2...}
 \maketitle
 %----------------------------------------------------------
 %\thispagestyle{empty}
@@ -122,6 +124,7 @@ the fundamental frequency.
 output frequency is approximately equal to the transmitter's carrier frequency and is
 input to a product detector
 \end {itemize}
+
 \chapter[Amplitude Modulation- Generation]{Amplitude Modulation- Generation}
 
 \section*{Aim}
@@ -205,7 +208,7 @@ R_1=\frac{V_{R1}}{10I_b}=\frac{10.8V}{10X15X10{^-6}}= 72k\Omega
 \noindent Based on these design equations use the standard resistor values of $R_1=22k\Omega,\ R_2=10k\Omega, \ R_c=10k\Omega,\ R_c=560\Omega$ and a load resistance of $R_L=1k\Omega$.
 Use coupling capacitors $C_1=0.1 \mu F,\ C_2=0.001\mu F$ and emitter bye-pass capacitor $C_E=0.01\mu F$.
 \subsection*{Components and Equipments Required}
-Function Generators(2), CRO(2), Connection wires, Probes.
+Function Generators(2), CRO(2), Connection wires, Breadboard, Probes.
 \\BF194 - High frequency bipolar junction transistor
 \\ $22k\Omega,\  10k\Omega\ (2),\ 560\Omega,\,\ 1k\Omega $ - Resistors
 \\ $ 0.1\mu F,\ 0.01\mu F, \ 0.001\mu F $ - Capacitors
@@ -244,9 +247,10 @@ Fill in the observation column
 \section*{Observation}
 
 \begin{figure}[h]
-\label{AMmodindex}
+
 \includegraphics[width=\textwidth]{AMmodindex.png}
 \caption{Effect of modulation index on AM}
+\label{AMmodindex}
 \end{figure}
 \noindent Fig \ref{AMmodindex}  shows the effect of modulation index on the resultant AM wave\footnote{\url{https://commons.wikimedia.org:/wiki/File:Amplitude_Modulated_Wave-hm-64.svg}}
 \begin{center}
@@ -279,6 +283,7 @@ The modulation index corresponding to $E_m=$ \textemdash \textemdash and $E_c=$ 
 
 
 \chapter[Amplitude Modulation - Detection]{Amplitude Modulation - Detection}
+
 \section*{Aim}
 The experiment aims at designing an AM demodulator circuit and implementing it.
 
@@ -322,11 +327,42 @@ R_1 = \frac{.1ms}{C_1}
 R_1 = \frac{.1ms}{0.01\mu F}=10 k\Omega. 
 \end{equation}
 \section*{Circuit Diagram}
+
+\begin{figure}[h]
+\includegraphics[width=15cm, height=10cm, trim=5cm 7.5cm 7.5cm 4cm, clip=true]{AMDemod.png}
+\caption{AM Demodulation-Simple Diode Detector}
+\label{AMDemod} 
+\end{figure}
+The circuit diagram for AM Demodulator using a simple diode detector is shown in Fig. \ref{AMDemod}.
+
+\section*{Components and Equipments Required}
+CRO, Function Generators(2), Breadboard, Probes.
+\\Diodes- OA79
+\\Capacitor- 0.01 $\mu$F
+\\Resistor-10k$\Omega$
 \section*{Procedure}
+
+\begin{enumerate}
+\item
+Make connections on the breadboard as per the circuit diagram.
+\item
+Supply AM signal either from the signal generator or from the circuit designed in experiment Amplitude Modulation- Generation. 
+\item
+Connect the demodulated output to one channel of CRO along with the unmodulated signal on the other channel.
+\item
+Observe the Modulated and demodulated waveforms and plot it on a graph sheet.
+\end{enumerate}
 \section*{Observation}
+A model plot showing the expected result of the experiment is shown in the Fig.\ref{AMdemod}
+\begin{figure}
+\includegraphics[width=10cm, height=10cm, trim= 2cm 1cm 1cm 2cm,clip=true]{AMdemod.png}
+\caption{Modulated AM signal and Demodulated carrier}
+\label{AMdemod}
+\end{figure}
+
 \section*{Result}
 
-
+AM demodulation circuit was implemented on breadboard and output was observed and plotted ona graph sheet.
 
 
 
