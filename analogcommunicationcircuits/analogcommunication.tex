@@ -365,14 +365,21 @@ A model plot showing the expected result of the experiment is shown in the Fig.\
 AM demodulation circuit was implemented on breadboard and output was observed and plotted ona graph sheet.
 
 %CHAPTER-----------------------------------------------------------------------
-\chapter[Intermediate Frequency Amplifier]{Intermediate Fequency Amplifier}
+\chapter[Intermediate Frequency Amplifier]{Intermediate Frequency Amplifier}
 %-------------------
 \section*{Aim}
 To design and implement an intermediate frequency amplifier using BJT and IFT.
 %--------------------
 \section*{Theory}
+
+
 A tuned amplifier is same as a normal voltage amplifiers except that they are designed to amplify signals of a particular frequency and reject signals of all other frequencies.
 
+A tuned load is to be inevitably used in the amplifier circuit to make the gain maximum at some particular frequency. The presence of tuned load eliminates the need for biasing BJT in the active region, because it can provide full sinusoidal swing of the output voltage even if the active element conducts only during a fraction of the sinusoidal cycle. The tuned circuit resonates at one frequency and so the unwanted frequencies are suppressed, and the wanted full signal (sine wave) is extracted by the tuned load.
+
+The circuit here is a single tuned Class-C amplifier. An intermediate frequency transformer(IFT) is used as tuned load. IFT is tuned to standard 455 kHz audio frequency. 
+
+The Class-C operation reduces power dissipation in the active device. When the input signal is at the frequency of 455 kHz, the current pulses at that frequency are fed to the tuned load which makes them oscillate at that frequency. Thus full sinusoidal voltage waveform is generated across the load resistor.
 \section*{Design}
 \section*{Circuit Diagram}
 \section*{Procedure}
