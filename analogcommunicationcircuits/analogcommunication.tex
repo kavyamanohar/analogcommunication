@@ -3,6 +3,9 @@
 \usepackage{color}
 \usepackage{url}
 \usepackage{amssymb}
+\usepackage{appendix}
+
+
 %\usepackage{hyperref}
 
 
@@ -34,7 +37,7 @@ Laboratory Manual}
   
 \textcopyright{}2013
 \\[5cm]
-    This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 India License. See \url{http://creativecommons.org/licenses/by-sa/4.0/} for more details.
+    This work is licensed under a Creative Commons Attribution-Share Alike 4.0 India License. See \url{http://creativecommons.org/licenses/by-sa/4.0/} for more details.
 %------------------------------------------------------------
 
 
@@ -141,30 +144,12 @@ The ratio of the maximum amplitude of the modulating signal voltage to that of t
 
 \section*{Design}
 \textcolor{red}{Design steps need to be verified}
-\paragraph{}
-Choose BF194 which is a high frequency transistor. From its datasheet the various parameters can be obtained as:
-\textcolor{red}{Pinout details of BF195 may be included in Appendix}
-  Type Designator: BF194
-
-Material of transistor: Si
-
-Polarity: NPN
-
-Maximum collector power dissipation ($Pc$), W: 0.25
-
-Maximum collector-base voltage |$V_{cb}$|, V: 30
-
-Maximum collector-emitter voltage |$V_{ce}$|, V: 20
-
-Maximum emitter-base voltage |$V_{eb}$|, V: 5
-
-Maximum collector current |$I_{c max}$|, mA: 30
-
-Forward current transfer ratio (hFE), min: 67
 
 \paragraph{DC Biasing conditions:}
+Choose BF194 which is a high frequency transistor. From its datasheet (See \ref{BF194/195}) the various parameters can be obtained as:
 
-  Let the supply voltage be 60\% of the maximum $V_{ce}$.  \begin{equation}
+ 
+Let the supply voltage be 60\% of the maximum $V_{ce}$.  \begin{equation}
 V_{cc}=\ 60\% of V_{cemax}=\ 12 V
 \end{equation}
 
@@ -379,12 +364,12 @@ A tuned amplifier is same as a normal voltage amplifiers except that they are de
 
 A tuned load is to be inevitably used in the amplifier circuit to make the gain maximum at some particular frequency. The presence of tuned load eliminates the need for biasing BJT in the active region, because it can provide full sinusoidal swing of the output voltage even if the active element conducts only during a fraction of the sinusoidal cycle. The tuned circuit resonates at one frequency and so the unwanted frequencies are suppressed, and the wanted full signal (sine wave) is extracted by the tuned load.\footnote{\url{http://en.wikipedia.org/wiki/Electronic_amplifier#Class_C}}
 
-The circuit here is a single tuned Class-C amplifier. An intermediate frequency transformer(IFT) is used as tuned load. IFT is tuned to standard 455 kHz audio frequency. 
-
+The circuit here is a single tuned Class-C amplifier. An intermediate frequency transformer(IFT) is used as tuned load. IFT is tuned to standard 455 kHz audio frequency. (See \ref{IFT})
+\textcolor{red}{More on IFT  may be addedd in appendix}
+%-------------\textcolor{red}{More on IFT may be added in appendix}---------
+ 
 The Class-C operation reduces power dissipation in the active device. When the input signal is at the frequency of 455 kHz, the current pulses at that frequency are fed to the tuned load which makes them oscillate at that frequency. Thus full sinusoidal voltage waveform is generated across the load resistor.
 
-\textcolor{red}{More on IFT  may be addedd in appendix}
-%-------------\textcolor{red}{More on IFT may be added in appendix}----------
 \section*{Design}
 %-----------------
 \textcolor{red}{Design equations need to be verified}
@@ -530,6 +515,38 @@ R_{in}= R_1 ||R_2 || h_{FE}r_e
 \section*{Procedure}
 \section*{Observation}
 \section*{Result}
+\begin{appendix}
+\chapter {Quick Reference-Data on Components}
+\section{BJT BF195/195}
+\label{BF194/195}
+ BF194/195 is a high frequency transistor. From its datasheet 
+
+Type Designator: BF194
+
+Material of transistor: Si
+
+Polarity: NPN
+
+Maximum collector power dissipation ($Pc$), W: 0.25
+
+Maximum collector-base voltage |$V_{cb}$|, V: 30
+
+Maximum collector-emitter voltage |$V_{ce}$|, V: 20
+
+Maximum emitter-base voltage |$V_{eb}$|, V: 5
+
+Maximum collector current |$I_{c max}$|, mA: 30
+
+Forward current transfer ratio (hFE), min: 67
+
+\textcolor{red}{Pinout to be added}
+
+\section{Intermediate Frequency Transformer}
+\label{IFT}
+
+
+
+\end{appendix}
 \begin{thebibliography}{1}
 \bibitem{ACmanual}{LABORATORY MANUAL COMMUNICATIONS LABORATORYEE 321, CALIFORNIA STATE UNIVERSITY, LOS ANGELES
 Lab-Volt Systems, Inc}
