@@ -52,6 +52,7 @@ Laboratory Manual}
 
 \listoffigures
 \thispagestyle{empty}
+
 \chapter [Introduction to Analog Communication]{Introduction to Analog Communication}
 
 
@@ -434,8 +435,15 @@ R_{in}= R_1 ||R_2 || h_{FE}r_e
 \section*{Procedure}
 \section*{Observation}
 \section*{Result}
-\chapter[Mixer Circuit using FET and BJT]{Mixer Circuit using FET and BJT}
 
+\chapter[Mixer Circuit using FET and BJT]{Mixer Circuit using FET and BJT}
+\section*{Aim}
+\section*{Theory}
+\section*{Design}
+\section*{Circuit Diagram}
+\section*{Procedure}
+\section*{Observation}
+\section*{Result}
 
 \chapter[Balanced Modulator for DSB-SC]{Balanced Modulator for DSB-SC}
 \section*{Aim}
