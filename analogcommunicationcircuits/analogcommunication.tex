@@ -124,6 +124,88 @@ the fundamental frequency.
 output frequency is approximately equal to the transmitter's carrier frequency and is
 input to a product detector
 \end {itemize}
+%CHAPTER-----------------------------------------------------------------------
+\chapter[Intermediate Frequency Amplifier]{Intermediate Frequency (Tuned) Amplifier}
+%-------------------
+\section*{Aim}
+To design and implement a tuned  intermediate frequency amplifier using BJT and IFT.
+%--------------------
+\section*{Theory}
+
+
+A tuned amplifier is same as a normal voltage amplifiers except that they are designed to amplify signals of a particular frequency and reject signals of all other frequencies.
+
+A tuned load is to be inevitably used in the amplifier circuit to make the gain maximum at some particular frequency. The presence of tuned load eliminates the need for biasing BJT in the active region, because it can provide full sinusoidal swing of the output voltage even if the active element conducts only during a fraction of the sinusoidal cycle. The tuned circuit resonates at one frequency and so the unwanted frequencies are suppressed, and the wanted full signal (sine wave) is extracted by the tuned load.\footnote{\url{http://en.wikipedia.org/wiki/Electronic_amplifier\#Class_C}}
+
+The circuit here is a single tuned Class-C amplifier. An intermediate frequency transformer(IFT) is used as tuned load. IFT is tuned to standard 455 kHz audio frequency. (See \ref{IFT})
+
+The Class-C operation reduces power dissipation in the active device. When the input signal is at the frequency of 455 kHz, the current pulses at that frequency are fed to the tuned load which makes them oscillate at that frequency. Thus full sinusoidal voltage waveform is generated across the load resistor.
+
+\section*{Design}
+%-----------------
+\textcolor{red}{Design equations need to be verified}
+Let the required output be $V_{pp}$ sine wave.
+Let the intermediate frequency for which the circuit is tuned is 455 kHz.
+Use high frequency transistor BF195.
+\begin{equation}
+I_c=10 \% \ of \  I_{Cmax} =\  1mA
+\end{equation}
+\noindent Let $V_{CC}$ be 20\% more than the output,ie. 10V.
+\begin{equation}
+V_{CC}=\ 12 \ V
+\end{equation}
+For class C mode of operation set $V_{CE}$ = 10 V.Hence $V_{RE}=2V$. Now the BJT is biased at cut-off.
+\begin{equation}
+V_{RE}=I_{E}. R_E
+\end{equation}
+\begin{equation}
+I_E \approx I_C 
+ \end{equation}
+\noindent Hence
+ \begin{equation}
+I_E = 1mA
+\end{equation}
+\noindent Thus
+\begin{equation}
+R_E=\frac{V_{RE}}{I_E}=\frac{2V}{1mA}=2k\Omega
+\end{equation}
+\subsubsection{Design of Resistors $R_1$ and $R_2$}
+
+ \noindent Since the transistor is in cut-off, $V_{BE}$ = 0 V. Hence,
+ \begin{equation}
+V_{R2}=\ V_{BE}+V_{RE} =\ 0+2V= 2V
+\end{equation}
+\noindent Let $I_2 =\ 9 I_B$ and $I_1=\ 10I_B$
+\begin{equation}
+I_B=\frac{I_C}{h_{FE}}=\frac{1mA}{67}=\ 14.9 \mu A.
+\end{equation}
+\begin{equation}
+V_{R2}=R_2I_2 
+\end{equation}
+
+\begin{equation}
+\therefore R_2=\frac{V_{R2}}{I_2}\\ 
+= \frac{2}{9X14.9\mu A} =14.9 k\Omega \approx 12 k\Omega
+\end{equation}
+\begin{equation}
+V_{R1}= V_{CC}-V_{R2} =12V-2V=10V
+\end{equation}
+
+\begin{equation}
+R_1=\frac{V_{R1}}{10I_B} =\frac{10V}{10X14.9\mu A}=67k\Omega
+\end{equation}
+\subsubsection{Design of capacitors}
+The reactance of input coupling capacitor should be such that,
+\begin{equation}
+X_{C1} \leq \frac{R_{in}}{10}
+\end{equation}
+\begin{equation}
+R_{in}= R_1 ||R_2 || h_{FE}r_e
+\end{equation}
+\section*{Circuit Diagram}
+\section*{Procedure}
+\section*{Observation}
+\section*{Result}
 
 \chapter[Amplitude Modulation- Generation]{Amplitude Modulation- Generation}
 
@@ -346,90 +428,6 @@ A model plot showing the expected result of the experiment is shown in the Fig.\
 
 AM demodulation circuit was implemented on breadboard and output was observed and plotted ona graph sheet.
 
-%CHAPTER-----------------------------------------------------------------------
-\chapter[Intermediate Frequency Tuned Amplifier]{Intermediate Frequency Tuned Amplifier}
-%-------------------
-\section*{Aim}
-To design and implement a tuned  intermediate frequency amplifier using BJT and IFT.
-%--------------------
-\section*{Theory}
-
-
-A tuned amplifier is same as a normal voltage amplifiers except that they are designed to amplify signals of a particular frequency and reject signals of all other frequencies.
-
-A tuned load is to be inevitably used in the amplifier circuit to make the gain maximum at some particular frequency. The presence of tuned load eliminates the need for biasing BJT in the active region, because it can provide full sinusoidal swing of the output voltage even if the active element conducts only during a fraction of the sinusoidal cycle. The tuned circuit resonates at one frequency and so the unwanted frequencies are suppressed, and the wanted full signal (sine wave) is extracted by the tuned load.\footnote{\url{http://en.wikipedia.org/wiki/Electronic_amplifier\#Class_C}}
-
-The circuit here is a single tuned Class-C amplifier. An intermediate frequency transformer(IFT) is used as tuned load. IFT is tuned to standard 455 kHz audio frequency. (See \ref{IFT})
-\textcolor{red}{More on IFT  may be addedd in appendix}
-%-------------\textcolor{red}{More on IFT may be added in appendix}---------
- 
-The Class-C operation reduces power dissipation in the active device. When the input signal is at the frequency of 455 kHz, the current pulses at that frequency are fed to the tuned load which makes them oscillate at that frequency. Thus full sinusoidal voltage waveform is generated across the load resistor.
-
-\section*{Design}
-%-----------------
-\textcolor{red}{Design equations need to be verified}
-Let the required output be $V_{pp}$ sine wave.
-Let the intermediate frequency for which the circuit is tuned is 455 kHz.
-Use high frequency transistor BF195.
-\begin{equation}
-I_c=10 \% \ of \  I_{Cmax} =\  1mA
-\end{equation}
-\noindent Let $V_{CC}$ be 20\% more than the output,ie. 10V.
-\begin{equation}
-V_{CC}=\ 12 \ V
-\end{equation}
-For class C mode of operation set $V_{CE}$ = 10 V.Hence $V_{RE}=2V$. Now the BJT is biased at cut-off.
-\begin{equation}
-V_{RE}=I_{E}. R_E
-\end{equation}
-\begin{equation}
-I_E \approx I_C 
- \end{equation}
-\noindent Hence
- \begin{equation}
-I_E = 1mA
-\end{equation}
-\noindent Thus
-\begin{equation}
-R_E=\frac{V_{RE}}{I_E}=\frac{2V}{1mA}=2k\Omega
-\end{equation}
-\subsubsection{Design of Resistors $R_1$ and $R_2$}
-
- \noindent Since the transistor is in cut-off, $V_{BE}$ = 0 V. Hence,
- \begin{equation}
-V_{R2}=\ V_{BE}+V_{RE} =\ 0+2V= 2V
-\end{equation}
-\noindent Let $I_2 =\ 9 I_B$ and $I_1=\ 10I_B$
-\begin{equation}
-I_B=\frac{I_C}{h_{FE}}=\frac{1mA}{67}=\ 14.9 \mu A.
-\end{equation}
-\begin{equation}
-V_{R2}=R_2I_2 
-\end{equation}
-
-\begin{equation}
-\therefore R_2=\frac{V_{R2}}{I_2}\\ 
-= \frac{2}{9X14.9\mu A} =14.9 k\Omega \approx 12 k\Omega
-\end{equation}
-\begin{equation}
-V_{R1}= V_{CC}-V_{R2} =12V-2V=10V
-\end{equation}
-
-\begin{equation}
-R_1=\frac{V_{R1}}{10I_B} =\frac{10V}{10X14.9\mu A}=67k\Omega
-\end{equation}
-\subsubsection{Design of capacitors}
-The reactance of input coupling capacitor should be such that,
-\begin{equation}
-X_{C1} \leq \frac{R_{in}}{10}
-\end{equation}
-\begin{equation}
-R_{in}= R_1 ||R_2 || h_{FE}r_e
-\end{equation}
-\section*{Circuit Diagram}
-\section*{Procedure}
-\section*{Observation}
-\section*{Result}
 \chapter[Mixer Circuit using FET and BJT]{Mixer Circuit using FET and BJT}
 
 
@@ -507,7 +505,7 @@ R_{in}= R_1 ||R_2 || h_{FE}r_e
 \chapter {Quick Reference-Data on Components}
 \section{BJT BF194/195}
 \label{BF194/195}
- BF194/195 is a high frequency transistor. From its datasheet 
+BF194/195 is a high frequency transistor. From its datasheet 
 
 Type Designator: BF194/BF195
 
@@ -527,13 +525,14 @@ Maximum collector current |$I_{c max}$|, mA: 30
 
 Forward current transfer ratio (hFE), min: 67
 
-\textcolor{red}{Pinout diagram to be added}
+\textcolor{red}{TODO: Pinout diagram to be added}
 
 \section{Intermediate Frequency Transformer}
 \label{IFT}
+IFT act as parallel resonant circuits whose resonating frequency is around 455 kHz. This frequecy is adjustable by a factor of  \textcolor{red}{FIXME} plusorminus 10\%. IFT has a tappedd primary winding and a secondary winding. Primary winding has a capacitor connected in parallel internally. Its inductor value is $L_eq=450\ mu H$ and capacitance $C=270\ pF$. 
+\\Its resonant frequency is thus $f=\frac{2\pi}{\sqrt{L_{eq}C}}\approx 455 kHz$.
 
-
-
+\textcolor{red}{TODO: add schematic diagram and photo of IFT}
 \end{appendix}
 \begin{thebibliography}{1}
 \bibitem{ACmanual}{LABORATORY MANUAL COMMUNICATIONS LABORATORYEE 321, CALIFORNIA STATE UNIVERSITY, LOS ANGELES
