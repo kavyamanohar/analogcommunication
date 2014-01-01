@@ -331,7 +331,7 @@ R_1=\frac{V_{R1}}{10I_b}=\frac{10.8V}{10X15X10{^-6}}= 72k\Omega
 
 \noindent Based on these design equations use the standard resistor values of $R_1=22k\Omega,\ R_2=10k\Omega, \ R_c=10k\Omega,\ R_c=560\Omega$ and a load resistance of $R_L=1k\Omega$.
 Use coupling capacitors $C_1=0.1 \mu F,\ C_2=0.001\mu F$ and emitter bye-pass capacitor $C_E=0.01\mu F$.
-\subsection*{Components and Equipments Required}
+\section*{Components and Equipments Required}
 Function Generators(2), CRO(2), Connection wires, Breadboard, Probes.
 \\BF194 - High frequency bipolar junction transistor
 \\ $22k\Omega,\  10k\Omega\ (2),\ 560\Omega,\,\ 1k\Omega $ - Resistors
@@ -489,7 +489,33 @@ A model plot showing the expected result of the experiment is shown in the Fig.\
 
 AM demodulation circuit was implemented on breadboard and output was observed and plotted ona graph sheet.
 
-\chapter[Mixer Circuit using FET and BJT]{Mixer Circuit using FET and BJT}
+\chapter[Mixer Circuit using BJT]{Mixer (Frequency Converter) Circuit using BJT}
+\section*{Aim}
+To design and set up a frequency converter circuit to produce an output frequency ($f_0$) which is the difference frequency between the two input frequency, ($f_{1}-f_{2}$).
+\section*{Theory}
+A mixer or frequency mixer is a nonlinear electrical circuit that creates new frequencies from two signals applied to it. In its most common application, two signals at frequencies $f_1$ and $f_2$ are applied to a mixer, and it produces new signals at the sum $f_1 + f_2$ and difference $f_1 - f_2$ of the original frequencies. Other frequency components (like $f_1 \pm 2f_2$ may also be produced in a practical frequency mixer.\footnote{\url{http://en.wikipedia.org/wiki/Frequency_mixer}}
+
+The most important application of mixers are in superhetrodyne receivers where the very high carrier frequency is down converted to an intermediate frequency. This is done by mixing the carrier frequency with a locally generated oscillator frequency to get an output frequency which is the difference between local oscillator frequency and incoming signal frequency, ie the intermediate frequency. In widely used AM receivers the local oscillator frequency is so chosen with respect to carrier frequency such that their difference is a constsnt intermediate frequency of 455kHz.\\
+\begin{center}
+$f_{IF}=f_{oscillator}-f_{carrier}=455 kHz$
+\end{center}
+The mixer output which contains all image frequencies of $f_1 \pm nf_2$ is filtered to obtain the required difference frequency $f_1-f_2$.
+\section*{Design}
+\section*{Components and Equipments required}
+Function Generators(2), CRO(1), Connection wires, Breadboard, Probes.
+\\BF194 - High frequency bipolar junction transistor
+\\ $47k\Omega,\  10k\Omega\ (2),\ 560\Omega,\,\ 2.2k\Omega ,\ 10k\Omega (2) $- Resistors
+\\ $ 1\mu F,\ 0.1\mu F, \ --\mu F $ - Capacitor
+\section*{Circuit Diagram}
+See Figure \ref{mixer} for circuit diagram.
+\begin{figure}[h]
+\includegraphics[width=12cm, height=8cm, trim=4cm 3.5cm 3cm 3.5cm,clip=true]{mixer.png}
+\caption{Circuit Diagram for Mixer circuit using BJT}
+\label{mixer}
+\end{figure}
+\section*{Procedure}
+\section*{Observation}
+\section*{Result}
 
 
 \chapter[Balanced Modulator for DSB-SC]{Balanced Modulator for DSB-SC}
