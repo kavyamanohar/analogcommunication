@@ -501,11 +501,12 @@ $f_{IF}=f_{oscillator}-f_{carrier}=455 kHz$
 \end{center}
 The mixer output which contains all image frequencies of $f_1 \pm nf_2$ is filtered to obtain the required difference frequency $f_1-f_2$.
 \section*{Design}
+Choose Transistor BC107. See \ref{BC107} for details. 
 \section*{Components and Equipments required}
 Function Generators(2), CRO(1), Connection wires, Breadboard, Probes.
-\\BF194 - High frequency bipolar junction transistor
+\\BC107 (1)
 \\ $47k\Omega,\  10k\Omega\ (2),\ 560\Omega,\,\ 2.2k\Omega ,\ 10k\Omega (2) $- Resistors
-\\ $ 1\mu F,\ 0.1\mu F, \ --\mu F $ - Capacitor
+\\ $ 1\mu F,\ 0.1\mu F, \ 0.01\mu F $ - Capacitor
 \section*{Circuit Diagram}
 See Figure \ref{mixer} for circuit diagram.
 \begin{figure}[h]
@@ -613,6 +614,28 @@ Maximum collector current |$I_{c max}$|, mA: 30
 Forward current transfer ratio (hFE), min: 67
 
 \textcolor{red}{TODO: Pinout diagram to be added}
+\section{BJT BC107}
+\label{BC107}
+Type Designator: BC107
+
+Material of transistor: Si
+
+Polarity: NPN
+
+Maximum collector power dissipation ($P_c$), W: 0.3
+
+Maximum collector-base voltage |$V_{cb}$|, V: 50
+
+Maximum collector-emitter voltage |$V_{ce}$|, V: 45
+
+Maximum emitter-base voltage |$V_{eb}$|, V: 6
+
+Maximum collector current |$I_{cmax}$|, A: 0.1
+
+Forward current transfer ratio ($h_{FE}$), min: 110
+
+Package of BC107 transistor: TO18
+
 
 \section{Intermediate Frequency Transformer}
 \label{IFT}
