@@ -2,12 +2,21 @@
 \section*{Aim}
 To demodulate the message content from AM signal. Also detect the automatic gain control signal from the received AM signal.
 \section*{Theory}
-A simple AM demodulator is a diode envelope detector as discussed in  Chapter \ref{AMDetection}.
-\section*{Design}After the envelope detector, a properly designed low pass filter is added to filter out the high frequency carrier and to contain the low frequency modulating signal. This signal contains a dc level also which can be used for automatic Gain Control (AGC) for the IF amplifier stages of a superhetrodyne receiver.
+\paragraph{Simple AGC:}
+
+A simple AM demodulator is a diode envelope detector as discussed in  Chapter \ref{AMDetection}. The demodulated output voltage is having a modulating signal and a dc offset voltage. The dc offset voltage is proportional to the strength of the modulated signal received by the receiver in a transmission reception system, which inturn is proportional to the strength(amplitude) of the carrier.
+
+From the detected output this dc voltage is separated by a LPF to get the required AGC feedback voltage. In superheterodyne receivers this AGC voltage is fed back to the IF stage of the receiver to increase or decrease the gain of the amplifier in such a way to get a constant output from the receiver.
+
+\paragraph{Delayed AGC:}In simple AGC circuits even if the signal level received is low, the AGC circuit operates and the overall gain of the receiver is getting reduced. To avoid this situation, a delayed AGC circuit is used. In this case AGC bias voltage is not applied to amplifiers, until signal strength has reached a predetermined level after which AGC bias is applied like simple AGC.
+
+\section*{Design}
+\paragraph{Simple AGC}
+ After the envelope detector, a properly designed low pass filter is added to filter out the high frequency carrier and to contain the low frequency modulating signal. This signal contains a dc level also which can be used for automatic Gain Control (AGC) for the IF amplifier stages of a superhetrodyne receiver.
 
 Let the carrier frequency be $f_c=455\ kHz$ and maximum modulating signal frequency be $f_m=10\ kHz$
 
-Inorder to design a lowpass filter with upper cutoff frequency 10 kHz,
+\noindent Inorder to design a lowpass filter with upper cutoff frequency 10 kHz,
 \begin{equation}
 f_H=\frac{1}{2\pi R_dC_d}
 \end{equation}
@@ -18,14 +27,14 @@ f_H=\frac{1}{2\pi R_dC_d}
 Choose $R_d=\ 15k\Omega \ or\ 22k\Omega$ standard resistor values.
 
 Make a $\pi$ filter using these $R_d$ and $C_d$ values. This completes the envelope detector part.
-\paragraph{AGC Circuit:} The demodulated output voltage is having a modulating signal and a dc offset voltage. The dc offset voltage is proportional to the strength of the modulated signal received by the receiver in a transmission reception system, which inturn is proportional to the strength(amplitude) of the carrier.
-
-From the detected output this dc voltage is separated by a LPF to get the required AGC feedback voltage. In superheterodyne receivers this AGC voltage is fed back to the IF stage of the receiver to increase or decrease the gain of the amplifier in such a way to get a constant output from the receiver. The AGC lowpass filter $R_a$ and $C_a$ in such a way as to eliminate full ac from the output and get a pure dc AGC voltage. 
+\paragraph{AGC Circuit:} The AGC lowpass filter $R_a$ and $C_a$ in such a way as to eliminate full ac from the output and get a pure dc AGC voltage. 
 Hence assuming a cutoff frequency of 10 Hz,
 \begin{equation}
 10 Hz= \frac{1}{2\pi R_aC_a}
 \end{equation}
 \noindent Assuming $C_a=1 \mu F$, we get $R_a=15 k \Omega$
+\paragraph{Delayed AGC Circuit:}
+Here the simple AGC circuit is applied to a difference amplifier.  Delayed AGC output will be produced only when input voltage $V_i$ exceeds the threshold voltage which can be set to the desired value by adjusting the dc level by the potentiometer.
 
 \section*{Circuit Diagram}
 \section*{Procedure}
