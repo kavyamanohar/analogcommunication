@@ -1,11 +1,13 @@
 \chapter[Characteristics of BJT in Common Emitter Configuration]{Characteristics of BJT in Common Emitter Configuration}
-\section*[AIM]{AIM}
+\section[AIM]{AIM}
 
-\section*[THEORY]{THEORY}
-\section*[DESIGN]{DESIGN}
-\section*[COMPONENTS AND EQUIPMENTS REQUIRED]{COMPONENTS AND EQUIPMENTS REQUIRED}
-\section*[PROCEDURE]{PROCEDURE}
-\section*[CIRCUIT DIAGRAM]{CIRCUIT DIAGRAM}
-\section*[OBSERVATION]{OBSERVATION}
-\section*[RESULT]{RESULT}
+\section[]{THEORY}
+\section[DESIGN]{DESIGN}
+\section[COMPONENTS AND EQUIPMENTS REQUIRED]{COMPONENTS AND EQUIPMENTS REQUIRED}
+\section[]{PROCEDURE}
+\section[]{CIRCUIT DIAGRAM}
+\section[]{OBSERVATION}
+\section[]{RESULT}
 
+
+\chapter[Characteristics of Zener Diodes]{Zener Diode Characteristics}
