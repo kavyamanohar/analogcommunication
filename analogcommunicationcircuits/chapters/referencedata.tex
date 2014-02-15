@@ -52,8 +52,37 @@ IFT act as parallel resonant circuits whose resonating frequency is around 455 k
 
 \textcolor{red}{TODO: add schematic diagram and photo of IFT}
 \section{AD 633 - Multiplier IC}
-Analog multipliers are complex arrangements of Opamps and other circuit elements in the form of IC. It can be used for different applications like multiplication, division, squarer, modulator, demodulator, filter etc. There are two inputs X and Y to which the signals to be multiplied are given.
+\paragraph{Multiplier ICs:}
+ Analog multipliers are complex arrangements of Opamps and other circuit elements in the form of IC. It can be used for different applications like multiplication, division, squarer, modulator, demodulator, filter etc. There are two inputs $\textbf{X}$ and $\textbf{Y}$ to which the signals to be multiplied are given.
+There are two input terminals $\textbf{X}$ and $\textbf{Y}$ to which the signals to be multiplied are given. The output W is the product of instantaneous values of input signals reduced by a scale factor $\textbf{k}$. $\textbf{k}$ is usually less than 1. For practical ICs $\textbf{k}=\frac{1}{10}$.
+
+\begin{equation}
+W=kXY
+\end{equation}
+
 \begin{figure}[h]
 \includegraphics[width=10cm, height=7cm]{ad633.png}
 \caption{Functional Block Diagram for AD633 multiplier IC}
+\label{ad633}
 \end{figure}
+
+\paragraph{AD633} is functionally a complete four quadrant analog multilier IC. The functional block diagram is shown in Fig. \ref{ad633}. This IC uses Gilbert's transconducatnce multiplier module in four quadrants. On chip circuit provides a scale factor of $k=\frac{1}{10}$. If $\textbf{X}$, $\textbf{Y}$ and $\textbf{Z}$ inputs are given we get 
+\begin{equation}
+W=\frac{XY}{10}+Z
+\end{equation}
+
+Here $\textbf{Z}$ is the input to the summing amplifier. If the summing amplifier input is grounded, then output 
+\begin{equation}
+W=\frac{XY}{10}
+\end{equation}
+
+\paragraph{Specifications}as in AD633 data sheet is,
+
+\noindent Dual power supply: $V_{cc}$ = \textcolor{red}{FIXME} plusorminus 8V to plusorminus 18V
+
+\noindent Input impedance > $5 M \Omega$
+
+\noindent Output impedance < $75  \Omega$
+
+\noindent Maximum operating frequency (Bandwidth) = $1 M\Omega$
+
