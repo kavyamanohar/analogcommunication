@@ -9,7 +9,7 @@ To design and implement a tuned  intermediate frequency amplifier using BJT and 
 Intermediate frequency amplifiers are tuned voltage amplifiers used to amplify a particular frequency. Its primary function is to amplify only the tuned frequency with maximum gain and reject all other frequencies above and below this frequency. This type of amplifiers are widely used in intermediate frequency amplifiers in AM super heterodyne receivers, where intermediate frequency is usually 455 kHz.
 
 In common emitter voltage amplifier circuit (emitter bypassed), the voltage gain is $A_V=\frac{R_C||R_L}{r_e}$, where $R_C$ is the collector resistance in the circuit, $R_L$ is the load resistance and $r_e$ is the internal emitter resistance. In tuned voltage amplifier the collector resistance is replace by a tuned load upon which  the gain is dependant. For a parallel resonating circuit the impedance $Z_o$ is maximum at resonant frequency, $f_o=\frac{2\pi}{\sqrt{LC}}$. So an amplifier with tuned load will have maximum gain at resonant frequency.
-In practical tuned amplifier circuits,an intermediate frequency transformer(IFT) is used as tuned load. IFT is tuned to standard 455 kHz audio frequency, (See \ref{IFT}).
+In practical tuned amplifier circuits, an intermediate frequency transformer(IFT) is used as tuned load. IFT is tuned to standard 455 kHz audio frequency, (See \ref{IFT}).
 
 The quality factor of the circuit is given by $Q=\frac{f_o}{Bandwidth}$.
 
@@ -18,7 +18,7 @@ Inorder to design a Common Emitter Intermediate frequency amplifier, use a high 
 \\Choose transistor BF 194/195. For its datasheet See \ref{BF194/195},\\
 
 
-\noindent Let $V_{CC}$ be 10\% more than the required output amplitude,ie. 10V.
+\noindent Let $V_{CC}$ be 10\% more than the required output amplitude, ie. 10V.
 \begin{equation}
 \therefore V_{CC}=12\ V
 \end{equation}
@@ -34,7 +34,7 @@ Let the stability factor of the circuit be,
 S=10
 \end{equation}
 
-\noindent Under dc  conditions, the primary dc resistance of the IFT is very small,($<5\Omega$). So dc volatage drop across collector circuit is very low, approximately zero.
+\noindent Under dc  conditions, the primary dc resistance of the IFT is very small,($<5\Omega$). So dc voltage drop across collector circuit is very low, approximately zero.
 
 \noindent For class A mode of operation set, 
 \begin{equation}
@@ -83,18 +83,23 @@ V_{R1}= V{CC} \frac{R_2}{R_1+R_2}=\ 6.6V
 \label{R2}
 \frac{R_2}{R_1+R_2}=\ \frac{6.6V}{12V}=\ 0.55
 \end{equation}
-From \ref{R1R2} and \ref{R2}, 
+From equations \ref{R1R2} and \ref{R2}, 
 \begin{equation}
 R_1=\ 91.4\ k\Omega \approx \ 82\ k\Omega \ and \ R_2=100\ k\Omega
+\end{equation}
+\noindent Choose load resistor as 
+\begin{equation}
+R_L=\ 100 k\Omega
 \end{equation}
 \subsubsection{Design of capacitors}
 \noindent The capacitors $C_1$, $C_2$  and $C_E$  can be designed based on lower cut-off frequency at -3 dB point. Since this frequency is verylower than 300 kHz, Choose low values of capacitance like \begin{equation}
 C_1=\ C_2=\ C_E=\ 1 \ \mu F
 \end{equation}
+
 \section*{Circuit Diagram}
 See Figure \ref{IFTuned} for circuit diagram.
 \begin{figure}[h]
-\includegraphics[width=12cm, height=8cm, trim=4cm 3.5cm 5cm 3.5cm,clip=true]{IFTuned.png}
+\includegraphics[width=12cm, height=8cm, trim=2cm 3.5cm 5cm 3.5cm,clip=true]{IFTuned.png}
 \caption{Circuit Diagram for IF Tuned Amplifier}
 \label{IFTuned}
 \end{figure}
@@ -107,9 +112,7 @@ Obtain output from terminal-1 or terminal-2 as in the circuit diagram.
 \item
 Give input signal, which is a sinewave of frequency variable from 300 kHz to 600 kHz and amplitude 50 $mV_{pp}$.
 \item
-Calculate gain $A_V$ by varying $V_{inpp}$.\\
-
-($A_V= \ \frac{V_{outpp}}{V_{inpp}}$)
+Calculate gain $A_V$ by varying $V_{inpp}$.($A_V= \ \frac{V_{outpp}}{V_{inpp}}$)
 
 \item
 Plot frequency response characteristics. Find out resonant frequency, 3-dB bandwidth and Q-factor.
@@ -122,7 +125,7 @@ Plot frequency response characteristics. Find out resonant frequency, 3-dB bandw
 \hline
  & & &\\
  
-$f_{in}$  & $V_{inpp}$ & $V_{outpp}$ & $A_v$\\
+$f_{in}$  &  $V_{outpp}$ & $A_v\ =\frac{V_{outpp}}{V_{inpp}} $ & $Gain_{dB}=\ 20\ log\ A_v$ \\
  & & & \\ \hline
  & & &\\ \hline
 & & &\\ \hline
