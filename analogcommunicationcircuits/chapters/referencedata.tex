@@ -47,14 +47,15 @@ Package of BC107 transistor: TO18
 
 \section{Intermediate Frequency Transformer}
 \label{IFT}
-IFT acts as parallel resonant circuits whose resonating frequency is around 455 kHz. This frequecy is adjustable by a factor of $\pm 10 \%$ . IFT has a tapped primary winding and a secondary winding. Primary winding has a capacitor connected in parallel internally. Its inductor value is $L_eq=450\mu H$ and capacitance $C=270\ pF$. 
-\\Its resonant frequency is thus $f=\frac{2\pi}{\sqrt{L_{eq}C}}\approx 455 kHz$.
+IF Taransformers come as specially designed tuned circuits in groundable metal packages called IF cans. The primary winding has an inducance of $L_{eq}=450\mu H$ and it comes with a shunt capacitor of capacitance $C=270\ pF$. Its resonant frequency is thus $f=\frac{2\pi}{\sqrt{L_{eq}C}}\approx 455 kHz$.\\ This frequecy is adjustable by a factor of $\pm 10 \%$ . IFT has a tapped primary winding as shown in the schematic diagram, figure \ref{iftschem}. 
 
+The ferrite core between primary and secondary windings is tunable with a non-metallic screw driver or tuning tool. It changes the mutual inductance and thus control the Q-factor of the collector circuit of connected transistor\cite{Tomasi}.
+ 
 \begin{figure}
+
+\includegraphics[width=10cm, height=8cm]{IFT.png}
 \centering{
 \caption  {Schematic Diagram of Intermediate frequency Transformer}}
-\includegraphics[width=10cm, height=8cm]{IFT.png}
-
 \label{iftschem}
 \end{figure}
 
@@ -89,7 +90,7 @@ W=\frac{XY}{10}
 
 \paragraph{Specifications}as in AD633 data sheet is,
 
-\noindent Dual power supply: $V_{cc}$ = \textcolor{red}{FIXME} plusorminus 8V to plusorminus 18V
+\noindent Dual power supply: $V_{cc}= \pm \ 8V to \pm \ 18V$
 
 \noindent Input impedance > $5 M \Omega$
 
