@@ -2,11 +2,11 @@
 \section*{Aim}
 To demodulate the message content from AM signal. Also detect the automatic gain control signal from the received AM signal.
 \section*{Theory}
-\paragraph{Simple AGC:}
+
 
 A simple AM demodulator is a diode envelope detector as discussed in  Chapter \ref{AMDetection}. The demodulated output voltage is having a modulating signal and a dc offset voltage. The dc offset voltage is proportional to the strength of the modulated signal received by the receiver in a transmission reception system, which inturn is proportional to the strength(amplitude) of the carrier.
 
-From the detected output this dc voltage is separated by a LPF to get the required AGC feedback voltage. In superheterodyne receivers this AGC voltage is fed back to the IF stage of the receiver to increase or decrease the gain of the amplifier in such a way to get a constant output from the receiver.
+From the detected output this dc voltage is separated by a LPF to get the required AGC feedback voltage. In superheterodyne receivers this AGC voltage is fed back to the IF amplifier stages of the receiver to increase or decrease the gain of the amplifier in such a way to get a constant output from the receiver.
 
 \paragraph{Delayed AGC:}In simple AGC circuits even if the signal level received is low, the AGC circuit operates and the overall gain of the receiver is getting reduced. To avoid this situation, a delayed AGC circuit is used. In this case AGC bias voltage is not applied to amplifiers, until signal strength has reached a predetermined level after which AGC bias is applied like simple AGC.
 
