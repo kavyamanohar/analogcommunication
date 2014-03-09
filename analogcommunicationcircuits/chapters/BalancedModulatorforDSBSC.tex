@@ -1,4 +1,4 @@
-\chapter[Balanced Modulator for DSB-SC]{Balanced Modulator for DSB-SC}
+\chapter[DSB-SC using multiplier IC AD633]{DSB-SC using multiplier IC AD633}
 \section*{Aim}
 To set up a balanced modulator circuit for double side band suppressed carrier amplitude modulator.
 \section*{Theory}
@@ -16,16 +16,28 @@ W= \frac{e_me_c}{10} = \frac{E_mE_c}{20} [sin (\omega_c\ -\ \omega_m)-sin (\omeg
 \end{equation}
 This wave contains both the sidebands at $\omega_c-\omega_m$ and $\omega_c+\omega_m$, but not the wave at carrier frequency. Hence the name double sideband suppressed carrier modulation(DSB-SC).
 \section*{Design}
-
 \section*{Circuit Diagram}
+The circuit diagram for implementing DSBSC using multiplier IC is shown in figure \ref{DSBSCckt}.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=10cm,height=8cm]{633dsbscckt.png}
+\caption{Circuit diagram for DSBSC using multiplier IC}
+\label{DSBSCckt}
+\end{center}
+
+\end{figure}
+
 \section*{Procedure}
 \section*{Observation}
 
 The following figure \ref{DSBSC} shows\footnote{By Serych at cs.wikipedia [Public domain], from Wikimedia Commons.  \ \url{http://commons.wikimedia.org/wiki/File\%3AAM-DSBSC.png}} the DSB-SC signal in blue and the original message is shown in red.
 \begin{figure}[h]
+\begin{center}
 \includegraphics[width=10cm,height=5cm]{AMDSBSC.png}
 \caption{DSB-SC signal in blue, original message shown in red.}
 \label{DSBSC}
+\end{center}
+
 \end{figure}
 
 
