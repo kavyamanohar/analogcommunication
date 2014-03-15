@@ -37,8 +37,44 @@ f_H=\frac{1}{2\pi R_dC_d}
 Choose $R_d=\ 15k\Omega \ or\ 22k\Omega$ standard resistor values.\\
 \section*{Circuit Diagram}
 \subsection*{Using transistor as a switch}
-\subsection*{Using CMOS switching IC CD4016}
 
+
+
+The PAM generation and demodulation circuit is shown in Fig. \ref{pamckt}.
+
+\begin{figure}
+\includegraphics[width=\textwidth, trim=5cm 3cm 4cm 4cm,clip=true]{pamckt1.png}
+\caption{PAM generation and demodulation circuuit}
+\label{pamckt}
+\end{figure}
+
+
+
+\subsection*{Using CMOS switching IC CD4016}
+\section*{Components and Equipments Required}
+CRO (1), \\Signal generator(2),
+\\Resistors: $15\ k\Omega$(2), $10\ k\Omega$(1)
+\\Capacitors: $0.01\  \mu F$(2)
 \section*{Procedure}
+\begin{itemize}
+\item
+Connect the PAM generating circuit as shown in the circuit diagram, Figure \ref{pamckt}.
+\item
+Feed the modulating message signal and the carrier pulses from the function generator.
+\item
+Observe the output on a CRO and plot the graphs of the input and output waveforms.
+\item
+Make the demodulating circuit as shown in the circuit diagram, Figure \ref{pamckt}.
+\item
+Repeat the PAM experiment using CD4016 IC.
+\item
+Make connections as shown in the circuit diagram, Figure %\ref{pamckt2}
+\item
+Observe the input and output waveforms from PAM generaton and demodulation circuits using CD4016 IC.
+
+\end{itemize}•
 \section*{Observation}
+Plot the graphs of input and uotput waveforms as observed on a CRO.
 \section*{Result}
+
+Implemented the PAM generation and demodulation circuits using BJT as well as switching IC.
