@@ -21,7 +21,7 @@ W= \frac{E_mE_c [cos (2\pi (f_c\ -\ f_m)t)]}{20}- \frac{E_mE_c[cos (2\pi (f_c\ +
 \item
 Using Diode envelope detector.
 \item
-Using another AD633 in cascade with AM generating circuit.
+Using another AD633 in cascade with AM generating circuit for multiplying the AM with the carrier.
 \end{enumerate}
 
 Multiplying the AM with the carrier once again will result in the following output.
@@ -34,9 +34,9 @@ W=\frac{1}{10} &[ \frac{E_mE_c [cos (2\pi (f_c\ -\ f_m)t)]}{20}- \frac{E_mE_c[co
 
 \begin{equation}
 \begin{split}
-W=& \frac{E_m.{E_c}^2}{400}sin(2\pi (2f_c-f_m)t)  -  \frac{E_m.{E_c}^2}{400}sin(2\pi (2f_c+f_m)t)\\ 
-&\quad -\frac{{E_c}^2}{20}-\frac{{E_c}^2}{20}cos(2\pi(2f_m)t) \\
-&\quad +\frac{E_m.{E_c}^2}{200}sin(2\pi f_mt)
+W=& \frac{{E_c}^2}{20}+\frac{E_m.{E_c}^2}{200}sin(2\pi f_mt) \\
+&\quad -\frac{{E_c}^2}{20}cos(2\pi(2f_m)t) \\
+&\quad +\frac{E_m.{E_c}^2}{400}sin(2\pi (2f_c-f_m)t)  -  \frac{E_m.{E_c}^2}{400}sin(2\pi (2f_c+f_m)t)
 \end{split}
 \end{equation}
 
@@ -57,7 +57,7 @@ W=\frac{X.Y}{10}+Z
 W=\frac{e_m.e_c}{10}+e_c
 \end{equation}
 \begin{equation}
-W=\frac{6.25}{20}[cos 2\pi 9000t-cos 2\pi 11000t]+2.5 sin(2\pi10000t)
+W=\frac{6.25}{20}[cos 2\pi 99kt-cos 2\pi 101kt]+2.5 sin(2\pi100kt)
 \end{equation}
 
 \noindent Thus it contains two sidebands and the carrier, ie \emph{Double sideband - Full Carrier AM}.
@@ -70,8 +70,8 @@ An alternate method of demodulation is by multiplying the AM signal once again w
 
 \begin{equation}
 \begin{split}
-W=& \frac{6.25}{20} +\frac{15.625}{200}sin(2\pi 1000 t)\\
-&\quad  -\frac{6.25}{20}cos(2\pi 2000t) +\frac{15.625}{400}sin(2\pi19000t) -\frac{15.625}{400}sin(2\pi 21000t)
+W=& \frac{6.25}{20} +\frac{15.625}{200}sin(2\pi 1kt)\\
+&\quad  -\frac{6.25}{20}cos(2\pi 2kt) +\frac{15.625}{400}sin(2\pi199kt) -\frac{15.625}{400}sin(2\pi 201kt)
 \end{split}
 \end{equation}
 
@@ -85,12 +85,12 @@ f_c=\frac{1}{2\pi R_1C_1}=1.5kHz
 Choose $C_1=0.01\  \mu F$
 $\therefore  R_1 =7.5 \ k \Omega$
 
-A non-inverting amplifier may be used to amplify this signal. Using a feedback resistor of $R_f= 100 \ \k Omaga$ and an input resistance of $R_i=10\ k\Omega$ will result in a gain of $A_v=1+\frac{R_f}{R_i}=11$.
+A non-inverting amplifier may be used to amplify this signal. Using a feedback resistor of $R_f= 100 \ k \Omega$ and an input resistance of $R_i=10\ k\Omega$ will result in a gain of $A_v=1+\frac{R_f}{R_i}=11$.
 \section*{Circuit Diagram}
 The circuit diagram for generating AM(DSB-FC) and demodulating it using AD633 multiplier IC as shown in Figure. \ref{633amckt}. 
 
 \begin{sidewaysfigure}[ht]
-    \includegraphics[scale=0.8, trim=0cm 4cm 0cm 4cm,clip=true]{633am.png}
+    \includegraphics[scale=0.8, trim=0cm 4cm 0cm 4cm,clip=true]{633amckt.png}
     \caption{Circuit for AM generation and detection using AD633 multiplier IC}
     \label{633amckt}
 \end{sidewaysfigure}
@@ -113,13 +113,13 @@ Plot the signals observed on a graph sheet.
 \end{itemize}
 \section*{Observation}
 The input and output signals as observed on a CRO are shown in Figure \ref{AM633plot1}and \ref{AM633plot2}.
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics[width=\textwidth]{am6331.png}
 \caption{Message and carrier signals}
 \label{AM633plot1}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht]
 \includegraphics[width=\textwidth]{am6332.png}
 \caption{AM(DSB-FC) and Demodulation stage-1 signals}
 \label{AM633plot2}
