@@ -105,23 +105,68 @@ W=\frac{XY}{10}
 
 \section{555 Timer IC}
 \label{555}
+
+The 555 timer IC is an integrated circuit (chip) used in a variety of timer, pulse generation, and oscillator applications. The 555 can be used to provide time delays, as an oscillator, and as a flip-flop element. All these circuit variats are achieved by connecting proper values of resistors and capacitors externally.
 The pinout\footnote{\url{https://commons.wikimedia.org/wiki/\%3A555_Pinout.svg}} and internal block diagram\footnote{\url{https://commons.wikimedia.org/wiki/File\%3ANE555_Bloc_Diagram.svg}} of 555 timer IC are shown below.
 Its DIP\footnote{\url{https://commons.wikimedia.org/wiki/File\%3ASignetics_NE555N.JPG}} is also shown.
-\begin{figure}
+\begin{figure}[h]
 \includegraphics[height=5cm,width=\textwidth]{555_Pinout.png}
 \caption{Pin-out diagram of 555 IC}
 \end{figure}
 
-\begin{figure}
 
-
-\includegraphics[height=5cm,width=\textwidth]{Signetics_NE555N.jpg}
-\caption{The dual in line package of 555 IC}
-\end{figure}
-\begin{figure}
+\begin{figure}[h]
 
 
 \includegraphics[height=6cm,width=\textwidth]{555blockdiag.png}
 \caption{The internal block diagram of 555 IC}
 
 \end{figure}
+
+The functions of various pins of 555 are shown in Table \ref{555pindetails}. \footnote{\url{https://en.wikipedia.org/wiki/555_timer_IC\#Pins}}
+
+Please refer to \href{https://en.wikipedia.org/wiki/555_timer_IC}{555 Timer IC} for more detailed working of the IC pins when it is configured as multivibrators or oscillators.
+\begin{table}
+\caption{Pin details of 555 IC}
+
+\label{555pindetails}
+
+\begin{tabular}{|l|l|l|}
+
+
+\hline
+Pin number& Name& Purpose \\
+\hline
+1&	GND	& Ground reference voltage, low level (0 V)\\
+\hline
+2&	TRIG	& The OUT pin goes high and a timing interval starts when this input falls below\\& &  1/2 of  CTRL voltage (which is typically 1/3 of VCC, when CTRL is open).\\
+\hline
+
+3&OUT	&This output is driven to approximately 1.7 V below +VCC or GND.\\
+\hline
+
+4	& RESET &	A timing interval may be reset by driving this input to GND,\\& &  but the timing does not begin again until RESET\\& &  rises above approximately 0.7 volts. Overrides TRIG which overrides THR.\\
+\hline
+
+5&	CTRL&	Provides "control" access to the internal voltage divider \\& & (by default, 2/3 VCC).\\ \hline
+6&	THR& 	The timing (OUT high) interval ends when the voltage at \\& & THR is greater than that at CTRL (2/3 VCC if CTRL is open).\\ \hline
+
+7&	DIS&	Open collector output which may discharge a capacitor \\& & between intervals. In phase with output.\\ \hline
+ 
+8&	VCC	& Positive supply voltage, which is usually between 3 and 15 V \\& &  depending on the variation.\\ \hline
+
+ 
+
+\end{tabular}
+\end{table}
+%\begin{figure}
+%
+%
+%\includegraphics[height=5cm,width=\textwidth]{Signetics_NE555N.jpg}
+%\caption{The dual in line package of 555 IC}
+%\end{figure}
+
+
+\section{CD 4046 - PLL IC}
+
+A phase-locked loop or phase lock loop (PLL) is a control system that generates an output signal whose phase is related to the phase of an input signal. While there are several differing types, it is easy to initially visualize as an electronic circuit consisting of a variable frequency oscillator and a phase detector. The oscillator generates a periodic signal. The phase detector compares the phase of that signal with the phase of the input periodic signal and adjusts the oscillator to keep the phases matched. Bringing the output signal back toward the input signal for comparison is called a feedback loop since the output is 'fed back' toward the input forming a loop.\footnote{\url{https://en.wikipedia.org/wiki/Phase-locked_loop}}
