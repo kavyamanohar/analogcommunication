@@ -1,4 +1,35 @@
 \chapter {Quick Reference: Component Details}
+%%%%%%%%%%%%%%
+\section{Intermediate Frequency Transformer}
+\label{IFT}
+
+\begin{figure}[ht]
+\centering{ \includegraphics[width=7cm, height=5cm, trim= 2cm 2cm 2cm 2cm, clip=true]{IFT.png}}
+\caption {Schematic diagram of intermediate frequency transformer}
+\label{iftschem}
+\end{figure}
+
+
+Intermediate Frequency Transformers come as specially designed tuned circuits in groundable metal packages called IF cans. The primary winding has an inducance of $L_{eq}=450\mu H$ and it comes with a shunt capacitor of capacitance $C=270\ pF$. Its resonant frequency is thus $f=\frac{1}{2\pi\sqrt{L_{eq}C}}\approx 455 kHz$.
+
+This frequecy is adjustable by a factor of $\pm 10 \%$ . IFT has a tapped primary winding as shown in the schematic diagram, Figure \ref{iftschem}. 
+
+The ferrite core between primary and secondary windings is tunable with a non-metallic screw driver or tuning tool. It changes the mutual inductance and thus control the Q-factor of the collector circuit of connected transistor\cite{Tomasi}. Its internal details are shown in Figure \ref{ifcan2} and physical consruction is shown in Figure \ref{ifcan1}. \footnote{\url{http://retro.co.za/archive/amateur/SM0VPO-ReusingIFCans.pdf}}
+\begin{figure}[ht]
+\centering{\includegraphics{ifcan1.png}}%[width=\textwidth]
+\caption {Physical diagram of IF CAN}
+\label{ifcan1}
+\end{figure}
+\begin{figure}
+\centering{ \includegraphics{ifcan2.png}}
+\caption {Internal details of IF CAN}
+
+\label{ifcan2}
+\end{figure}
+
+
+%%%%%%%%%%%
+
 \section{BJT BF194/195}
 \label{BF194/195}
 BF194/195 is a high frequency transistor. From its datasheet 
@@ -48,19 +79,6 @@ Forward current transfer ratio ($h_{FE}$), min: 110
 Package of BC107 transistor: TO18
 \textcolor{red}{TODO: add schematic diagram and photo of BC107}
 
-\section{Intermediate Frequency Transformer}
-\label{IFT}
-IF Taransformers come as specially designed tuned circuits in groundable metal packages called IF cans. The primary winding has an inducance of $L_{eq}=450\mu H$ and it comes with a shunt capacitor of capacitance $C=270\ pF$. Its resonant frequency is thus $f=\frac{1}{2\pi\sqrt{L_{eq}C}}\approx 455 kHz$.\\ This frequecy is adjustable by a factor of $\pm 10 \%$ . IFT has a tapped primary winding as shown in the schematic diagram, figure \ref{iftschem}. 
-
-The ferrite core between primary and secondary windings is tunable with a non-metallic screw driver or tuning tool. It changes the mutual inductance and thus control the Q-factor of the collector circuit of connected transistor\cite{Tomasi}.
- 
-\begin{figure}
-\centering{ \includegraphics[width=7cm, height=5cm, trim= 2cm 2cm 2cm 2cm, clip=true]{IFT.png}}
-\caption {Schematic Diagram of Intermediate frequency Transformer}
-\label{iftschem}
-\end{figure}
-
-\textcolor{red}{TODO: add photo of IFT}
 
 
 \section{AD 633 - Multiplier IC}
