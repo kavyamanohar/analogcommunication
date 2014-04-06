@@ -11,7 +11,7 @@ e_c=E_c\  sin\ 2\pi f_ct
 e_m=E_m\  sin\ 2\pi f_mt
 \end{equation}
 Multiplication is done using AD633 (See \ref{AD633}) multiplier IC.
-Applying $e_c$ to $\textbf{X}$ and $e_m$ to $\textbf{Y}$ with $\textbf{Z}$ is grounded, 
+Applying $e_m$ to $\textbf{X}$ and $e_c$ to $\textbf{Y}$ with $\textbf{Z}$ is grounded, 
 \begin{equation}
 W= \frac{e_me_c}{10} =\frac{Emsin(2\pi f_mt).Ecsin(2\pi f_ct)}{10}
 \end{equation}
@@ -50,11 +50,18 @@ W=& \frac{E_m.{E_c}^2}{400}sin(2\pi (2f_c-f_m)t)  -  \frac{E_m.{E_c}^2}{400}sin(
 \end{equation}
 Thus the signal consists of various frequencies of which, the smallest is the message frequency. It can be extracted by filtering using a low pass filter. Since the amplitude of the message frequency is very small, It may be amplified using a simple non-inverting amplifier using an opamp.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\includegraphics[width=\textwidth]{am6331.png}
+\caption{Message and carrier signals}
+\label{msg633plot1}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Design}
 
-To the \textbf{X} input of the IC, feed the carrier sinusoid of amplitude $E_m=2.5\ V$ and frequency $f_m= 1\ kHz$.\\
+To the \textbf{X} input of the IC, feed the message sinusoid of amplitude $E_m=2.5\ V$ and frequency $f_m= 1\ kHz$.\\
 
-To the \textbf{Y} input of the IC, feed the message sinusoid of amplitude $E_c=2.5\ V$ and frequency $f_c= 100\ kHz$.\\
+To the \textbf{Y} input of the IC, feed the carrier sinusoid of amplitude $E_c=2.5\ V$ and frequency $f_c= 100\ kHz$.\\
 Ground the \textbf{Z} input of the IC.\\
 Provide the biasing voltage of +15 V to pin 8 of the IC and -15 V to pin 5 of the IC.\\
 
@@ -72,6 +79,12 @@ W=\frac{6.25}{20}[cos 2\pi99kt-cos 2\pi101kt]
 \end{equation}
 
  This is the DSB-SC waveform.
+ 
+ \begin{figure}[ht]
+\includegraphics[width=\textwidth]{dsbsc6332.png}
+\caption{AM(DSB-FC) and Demodulation stage-1 signals}
+\label{dsbsc633plot2}
+\end{figure}
  
  \paragraph{Demodulation}  is by multiplying the DSB-SC signal once again with the carrier. This can be implemented by connecting another AD633 IC in cascade with the first one.
 
@@ -95,14 +108,18 @@ Choose $C_1=0.01\  \mu F$
 $\therefore  R_1 =7.5 \ k \Omega$
 
 A non-inverting amplifier may be used to amplify this signal. Using a feedback resistor of $R_f= 100 \ \k Omaga$ and an input resistance of $R_i=10\ k\Omega$ will result in a gain of $A_v=1+\frac{R_f}{R_i}=11$.
-
-\section*{Circuit Diagram}
-The circuit diagram for implementing DSBSC using multiplier IC is shown in figure \ref{DSBSCckt}.
 \begin{sidewaysfigure}[ht]
     \includegraphics[scale=0.8, trim=0cm 4cm 0cm 4cm,clip=true]{633dsbsc.png}
     \caption{Circuit for DSB-SC generation and detection using AD633 multiplier IC}
     \label{DSBSCckt}
 \end{sidewaysfigure}
+
+
+\section*{Circuit Diagram}
+The circuit diagram for implementing DSBSC using multiplier IC is shown in figure \ref{DSBSCckt}.
+
+
+
 
 \section*{Procedure}
 \begin{itemize}
@@ -124,17 +141,7 @@ Plot the signals observed on a graph sheet.
 
 
 The input and output signals as observed on a CRO are shown in Figure \ref{msg633plot1} and \ref{dsbsc633plot2}.
-\begin{figure}[ht]
-\includegraphics[width=\textwidth]{am6331.png}
-\caption{Message and carrier signals}
-\label{msg633plot1}
-\end{figure}
 
-\begin{figure}[ht]
-\includegraphics[width=\textwidth]{dsbsc6332.png}
-\caption{AM(DSB-FC) and Demodulation stage-1 signals}
-\label{dsbsc633plot2}
-\end{figure}
 
 \section*{Result}
 Implemented DSB-SC using multiplier IC AD 633 and observed the signal waveforms.
