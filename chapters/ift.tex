@@ -1,15 +1,15 @@
-\chapter[Intermediate Frequency Amplifier]{Intermediate Frequency Tuned Amplifier}
+\chapter[Tuned Amplifier using IFT]{Tuned Amplifier using IFT}
 \label{iftamplifier}
 %-------------------
 \section*{Aim}
-To design and implement a tuned  intermediate frequency amplifier using BJT and IFT.
+To design and implement a tuned frequency amplifier using BJT and IFT.
 %--------------------
 \section*{Theory}
 
 
 Intermediate frequency amplifiers are tuned voltage amplifiers used to amplify a particular frequency. Its primary function is to amplify only the tuned frequency with maximum gain and reject all other frequencies above and below this frequency. This type of amplifiers are widely used in intermediate frequency amplifiers in AM super heterodyne receivers, where intermediate frequency is usually 455 kHz.
 
-In common emitter voltage amplifier circuit (emitter bypassed), the voltage gain is $A_V=\frac{R_C||R_L}{r_e}$, where $R_C$ is the collector resistance in the circuit, $R_L$ is the load resistance and $r_e$ is the internal emitter resistance. In tuned voltage amplifier the collector resistance is replace by a tuned load upon which  the gain is dependant. For a parallel resonating circuit the impedance $Z_o$ is maximum at resonant frequency, $f_o=\frac{1}{2\pi \sqrt{LC}}$. So an amplifier with tuned load will have maximum gain at resonant frequency.
+In common emitter voltage amplifier circuit (emitter bypassed), the voltage gain is $A_V=\frac{R_C||R_L}{r_e}$, where $R_C$ is the collector resistance in the circuit, $R_L$ is the load resistance and $r_e$ is the internal emitter resistance. In tuned voltage amplifier the collector resistance is replace by a tuned load upon which  the gain is dependant. For a parallel resonating circuit cosisting of a capacitor, C and an inductor,L the impedance $Z_o$ is maximum at resonant frequency, $f_o=\frac{1}{2\pi \sqrt{LC}}$. So an amplifier with tuned load will have maximum gain at resonant frequency.
 In practical tuned amplifier circuits, an intermediate frequency transformer(IFT) is used as tuned load. IFT is tuned to standard 455 kHz audio frequency, (See \ref{IFT}).
 
 The quality factor of the circuit is given by $Q=\frac{f_o}{Bandwidth}$.
@@ -99,7 +99,7 @@ C_1=\ C_2=\ C_E=\ 1 \ \mu F
 
 \section*{Circuit Diagram}
 See Figure \ref{IFTuned} for circuit diagram.
-\begin{figure}[h]
+\begin{figure}[ht]
 \includegraphics[width=12cm, height=8cm, trim=2cm 3.5cm 5cm 3.5cm,clip=true]{IFTuned.png}
 \caption{Circuit Diagram for IF Tuned Amplifier}
 \label{IFTuned}
