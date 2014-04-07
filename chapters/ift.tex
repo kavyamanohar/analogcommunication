@@ -15,7 +15,7 @@ In practical tuned amplifier circuits, an intermediate frequency transformer(IFT
 The quality factor of the circuit is given by $Q=\frac{f_o}{Bandwidth}$.
 
 \section*{Design}
-Inorder to design a Common Emitter Intermediate frequency amplifier, use a high frequency transistor like BF194,BF195, BF494, BF495 or 2N2222.
+Inorder to design a common emitter amplifier operating at high frequency, one can use a high frequency transistor like BF194, BF195, BF494, BF495 or 2N2222.
 \\Choose transistor BF 194/195. For its datasheet See \ref{BF194/195},\\
 
 
@@ -24,8 +24,9 @@ Inorder to design a Common Emitter Intermediate frequency amplifier, use a high 
 \therefore V_{CC}=12\ V
 \end{equation}
 \begin{equation}
-I_c=10 \% \ of \  I_{Cmax} =\ 10\%\  of\  30\  mA \approx 1\ mA
+I_c<10 \% \ of \  I_{Cmax} =\ 10\%\  of\  30\  mA =\ 3 mA
 \end{equation}
+\noindent Let $I_c=\ 1 mA$.
 \noindent The current gain,
 \begin{equation}
 h_{FEmin}=\ 67
@@ -35,7 +36,7 @@ Let the stability factor of the circuit be,
 S=10
 \end{equation}
 
-\noindent Under dc  conditions, the primary dc resistance of the IFT is very small,($<5\Omega$). So dc voltage drop across collector circuit is very low, approximately zero.
+\noindent Under dc  conditions, the primary dc resistance of the IFT is very small($<5\Omega$). So dc voltage drop across collector circuit is very low, approximately zero.
 
 \noindent For class A mode of operation set, 
 \begin{equation}
@@ -93,7 +94,7 @@ R_1=\ 91.4\ k\Omega \approx \ 82\ k\Omega \ and \ R_2=100\ k\Omega
 R_L=\ 100 k\Omega
 \end{equation}
 \subsubsection{Design of capacitors}
-\noindent The capacitors $C_1$, $C_2$  and $C_E$  can be designed based on lower cut-off frequency at -3 dB point. Since this frequency is verylower than 300 kHz, Choose low values of capacitance like \begin{equation}
+\noindent The capacitors $C_1$, $C_2$  and $C_E$  can be designed based on lower cut-off frequency at -3 dB point. Since this frequency is much lower than 300 kHz, Choose low values of capacitance like \begin{equation}
 C_1=\ C_2=\ C_E=\ 1 \ \mu F
 \end{equation}
 
@@ -109,34 +110,40 @@ See Figure \ref{IFTuned} for circuit diagram.
 \item
 Assemble the circuit as shown in the circuit diagram.
 \item
-Obtain output from terminal-1 or terminal-2 as in the circuit diagram.
+Obtain output from output-1 or output-2 terminal as in the circuit diagram.
 \item
 Give input signal, which is a sinewave of frequency variable from 300 kHz to 600 kHz and amplitude 50 $mV_{pp}$.
+\item
+Observe the output waveform on a CRO. 
+\item
+Enter the details of input and output waveforms on the tabular column shown.
 \item
 Calculate gain $A_V$ by varying $f_{in}$.($A_V= \ \frac{V_{outpp}}{V_{inpp}}$)
 
 \item
-Plot frequency response characteristics. Find out resonant frequency, 3-dB bandwidth and Q-factor.
+Plot frequency response characteristics with $f_{in} (kHz) $ along x-axis and  $Gain_{dB}=\ 20\ log\ A_v$ along y-axis.
+\item
+Find the resonant frequency, 3-dB bandwidth and hence the Q-factor.
 \end{itemize}
 \section*{Observation}
 \begin{center}
 
-\begin{tabular}{|l|l|l|l|}
+\begin{tabular}{|l|l|l|l|l|}
 
 \hline
- & & &\\
+  & & & &\\
  
-$f_{in}$  &  $V_{outpp}$ & $A_v\ =\frac{V_{outpp}}{V_{inpp}} $ & $Gain_{dB}=\ 20\ log\ A_v$ \\
- & & & \\ \hline
- & & &\\ \hline
-& & &\\ \hline
-& & &\\ \hline
-& & &\\ \hline
-& & &\\ \hline
+$f_{in} (kHz) $  & $log_{10}\ f_{in}$  &  $V_{outpp}(V)$ & $A_v\ =\frac{V_{outpp}}{V_{inpp}} $ & $Gain_{dB}=\ 20\ log\ A_v$ \\ \hline
+ & & & &\\ \hline
+& & & &\\ \hline
+& & & &\\ \hline
+& & & &\\ \hline
+& & & &\\ \hline
+& & & &\\ \hline
 
 \end{tabular}
 \end{center}
-\textcolor{red}{TODO:frequency response curve of gain to be added}. 
+%\textcolor{red}{TODO:frequency response curve of gain to be added}. 
 \section*{Result}
 A tuned amplifier was implemented using IFT.\\
 Its maximum gain= \\
