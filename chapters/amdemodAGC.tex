@@ -69,7 +69,7 @@ The detector circuit with simple AGC is shown in Figure. \ref{detectagcckt}.%and
 \section*{Procedure}
 \begin{enumerate}
 \item
-{Connect the diode to the output of AM signal as in the circuit diagram Fig. \ref{detectagcckt}.}
+Connect the diode to the output of AM signal(See Figure. \ref{amenv}) as in the circuit diagram Fig. \ref{detectagcckt}.
 \item
 Connect load resistance $R_L$ and observe the outputwaveform on a CRO and plot it.
 \item
@@ -88,11 +88,20 @@ Eliminte the dc offset and observe the modulating signal from the $10\mu F$ capa
 %Slightly go on increasing the carrier amplitude. Note that for small values of carrier amplitude, delayed AGC voltage is positive. When it is above a certain limit the delayed AGC value becomes negative.
 \end{enumerate}
 \section*{Observation}
-The following are the observed results of the experiment. See Figure. \ref{demodagcwaves}.
+The following are the observed results of the experiment. See Figure. \ref{aminter} and Figure. \ref{demodagcwaves} for the waveforms of intermediate and final stages.
 \begin{figure}
-\includegraphics[height=4cm, width=12cm]{am.png}
-\includegraphics[height=7cm, width=12cm]{demodfig.png}
-\includegraphics[height=7cm, width=12cm]{demodagc2.png}
+\includegraphics[height=8cm, width=12cm]{am.png}
+\caption{AM with message envelope}
+\label{amenv}
+\end{figure}
+\begin{figure}
+\includegraphics[height=8cm, width=12cm]{demodfig.png}
+\caption{Intermediate stage of demodulation}
+\label{aminter}
+
+\end{figure}
+\begin{figure}
+\includegraphics[height=8cm, width=\textwidth]{demodagc2.png}
 \caption{Output waveforms from demodulation circuit}
 \label{demodagcwaves}
 \end{figure}
