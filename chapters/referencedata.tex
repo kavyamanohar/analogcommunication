@@ -54,8 +54,8 @@ Forward current transfer ratio (hFE), min: 67
 
 %\textcolor{red}{TODO: Pinout diagram to be added}
 
-\section{OA79 - High frequency diode}
-\textcolor{red}{TODO: Details to be added}
+%\section{OA79 - High frequency diode}
+%\textcolor{red}{TODO: Details to be added}
 \section{BJT BC107}
 \label{BC107}
 Type Designator: BC107
@@ -77,7 +77,7 @@ Maximum collector current |$I_{cmax}$|, A: 0.1
 Forward current transfer ratio ($h_{FE}$), min: 110
 
 Package of BC107 transistor: TO18
-\textcolor{red}{TODO: add schematic diagram and photo of BC107}
+%\textcolor{red}{TODO: add schematic diagram and photo of BC107}
 
 
 
@@ -118,6 +118,8 @@ W=\frac{XY}{10}
 \noindent Maximum operating frequency (Bandwidth) = $1 M\Omega$
 
 \section{CD 4016 - CMOS switching IC}
+The 4016 contains 4 analogue bilateral switches, each with an active-high enable input (A) and two input/outputs (X and Y). When the enable input is asseted (high), the X and Y terminals are connected by a low impedance; this is the on condition. When the enable is low, there is a high impedance path between X and Y, and the switch is off.
+
 The pinout diagram of 4016 switching IC is shown in Figure. \ref{4016pin}\footnote{Image courtesy:\href{http://commons.wikimedia.org/wiki/File\%3A4016\_Pinout.svg}{Inductiveload (Own work) [Public domain]via Wikimedia Commons}}.
 \begin{figure}
 \includegraphics[width=\textwidth, height=7cm]{4016pinout.png}
@@ -127,31 +129,26 @@ The pinout diagram of 4016 switching IC is shown in Figure. \ref{4016pin}\footno
 
 
 
-
-
 \section{555 Timer IC}
 \label{555}
-
-The 555 timer IC is an integrated circuit (chip) used in a variety of timer, pulse generation, and oscillator applications. The 555 can be used to provide time delays, as an oscillator, and as a flip-flop element. All these circuit variats are achieved by connecting proper values of resistors and capacitors externally.
-The pinout\footnote{\url{https://commons.wikimedia.org/wiki/\%3A555_Pinout.svg}} and internal block diagram\footnote{\url{https://commons.wikimedia.org/wiki/File\%3ANE555_Bloc_Diagram.svg}} of 555 timer IC are shown below.
-Its DIP\footnote{\url{https://commons.wikimedia.org/wiki/File\%3ASignetics_NE555N.JPG}} is also shown.
 \begin{figure}[h]
 \includegraphics[height=5cm,width=\textwidth]{555_Pinout.png}
 \caption{Pin-out diagram of 555 IC}
 \end{figure}
+The 555 timer IC is an integrated circuit (chip) used in a variety of timer, pulse generation, and oscillator applications. The 555 can be used to provide time delays, as an oscillator, and as a flip-flop element. All these circuit variats are achieved by connecting proper values of resistors and capacitors externally.
+The pinout\footnote{Image courtesy:\href{https://commons.wikimedia.org/wiki/\%3A555\_Pinout.svg}{Inductiveload (Own work) [Public domain]via Wikimedia Commons}}. %and internal block diagram\footnote{\url{https://commons.wikimedia.org/wiki/File\%3ANE555_Bloc_Diagram.svg}} 
+of 555 timer IC are shown below.
+%Its DIP\footnote{\url{https://commons.wikimedia.org/wiki/File\%3ASignetics_NE555N.JPG}} is also shown.
 
 
-\begin{figure}[h]
-
-
-\includegraphics[height=6cm,width=\textwidth]{555blockdiag.png}
-\caption{The internal block diagram of 555 IC}
-
-\end{figure}
-
-The functions of various pins of 555 are shown in Table \ref{555pindetails}. \footnote{\url{https://en.wikipedia.org/wiki/555_timer_IC\#Pins}}
-
-Please refer to \href{https://en.wikipedia.org/wiki/555_timer_IC}{555 Timer IC} for more detailed working of the IC pins when it is configured as multivibrators or oscillators.
+%
+%\begin{figure}[h]
+%
+%
+%\includegraphics[height=6cm,width=\textwidth]{555blockdiag.png}
+%\caption{The internal block diagram of 555 IC}
+%
+%\end{figure}
 \begin{table}
 \caption{Pin details of 555 IC}
 
@@ -185,6 +182,10 @@ Pin number& Name& Purpose \\
 
 \end{tabular}
 \end{table}
+The functions of various pins of 555 are shown in Table \ref{555pindetails}. \footnote{\url{https://en.wikipedia.org/wiki/555_timer_IC\#Pins}}
+
+Please refer to \href{https://en.wikipedia.org/wiki/555_timer_IC}{555 Timer IC} for more detailed working of the IC pins when it is configured as multivibrators or oscillators.
+
 %\begin{figure}
 %
 %
@@ -195,13 +196,29 @@ Pin number& Name& Purpose \\
 
 \section{CD 4046 - PLL IC}
 \label{4046}
-A phase-locked loop or phase lock loop (PLL) is a control system that generates an output signal which is synchronized in phase and frequency with its input signal. It is an electronic circuit consisting of a voltage controlled variable frequency oscillator, a phase detector and a lowpass filter. The oscillator generates a periodic signal. The phase detector compares the phase of that signal with the phase of the input periodic signal. Depending on the phase difference a voltage waveform is generated. It is lowpass filtered to obtain a dc volatge which os proportional to the phase difference. This voltage is fed back to the VCO which controls and adjusts the oscillator to keep the phases matched\footnote{\url{https://en.wikipedia.org/wiki/Phase-locked_loop}}. Specifically PLL synchronizes its output phase and frequency with the input for a given rage of frequencies.
+A phase-locked loop or phase lock loop (PLL) is a control system that generates an output signal from an oscillator which is synchronized in phase and frequency with its input signal. It is an electronic circuit consisting of a voltage controlled variable frequency oscillator(VCO), a phase detector and a lowpass filter. The oscillator generates a periodic signal. The phase detector compares the phase of that signal with the phase of the input periodic signal. Proportional to the phase difference a voltage waveform is generated. It is lowpass filtered to obtain a dc volatge which is proportional to the phase difference. This voltage is fed back to the VCO to control and adjust the oscillator to keep the phases matched. For more details refer \cite{wikipll}. Specifically PLL synchronizes its VCO phase and frequency with the input for a given range of frequencies. The block diagramatic representation of a PLL is shown in Figure. \ref{pll}.
+
+The range of input frequencies($f_i=f_{min}$ to $f_i=f_{max}$) for which the the PLL remains in this locked condition is called lock range of the PLL. If PLL is initially locked and the input fequency $f_i$ becomes less than $f_{min}$ or if $f_i$ exceeds $f_{max}$, PLL becomes unlocked. 
+
+When PLL is unlocked, VCO oscillates at free running frequency or centre frequency, $f_0$. The lock can be re-established if $f_i$ becomes sufficiently close to $f_0$. The range of frequencies around $f_0$(ie, $f_0-f_{cap}$ to $f_0+f_{cap}$) which when applied as input captures a PLL into lock is called capture range of the PLL.
+
+\begin{figure}
+\includegraphics[width=\textwidth]{PLL.png}
+\caption{Block diagram of a PLL}
+\label{pll}
+\end{figure}
 
 \paragraph{}
 
 
 CD4046 is a PLL IC. It has a linear voltage controlled oscillator(VCO) and two phase comparators($PC_1$ and $PC_2$)-\emph{Any of which can be used for PLL operation}. The periodic signal generated by the VCO is the output signal which is synchronized with the input signal. 
 
-The amplitude of VCO output depends on $V_{cc}$ and its reference frequency is determined by $V_{cc}$ as well as the value of externally connected resistors and capacitors $R_1$, $R_2$ and C. 
+The amplitude of VCO output depends on $V_{cc}$ and its free running frequency is determined by $V_{cc}$ as well as the value of externally connected resistors and capacitors $R_1$, $R_2$ and C. The pinout diagram is shown in the Figure. \ref{pll4046}.
+
+\begin{figure}
+\centering{ \includegraphics[width=5cm, height=10cm, angle=-90]{4046.png}}%[width=5cm,height=8cm]%
+\caption{Pinout diagram of CD4046 PLL IC}
+\label{pll4046}
+\end{figure}
 
 
