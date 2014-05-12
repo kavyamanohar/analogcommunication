@@ -15,6 +15,7 @@ Required packages:
 * texlive-xetex
 * texlive-latex-extras
 * latex2html
+* texlive-fonts-recommended
 
 Then build the book using:
 
