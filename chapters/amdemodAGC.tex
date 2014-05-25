@@ -7,9 +7,9 @@ To demodulate the message content from AM signal. Also detect the automatic gain
 
 A simple AM demodulator is a diode envelope detector. It can be implemented by a simple diode envelope detector to eliminate the negative half of the carrier envelope followed by a simple RC filter to remove the high frequency carrier. The result will be the low frequency envelope which is the demodulated message.
 
-A diode with low junction capacitance is used in the circuit as it is has to rectify high frequency carrier. It offers low impedence at high frequency. The RC elements connected after the diode acts as a filter. It acts as a lowpass filter which eliminates high frequency carrier at the same time it retains the low frequency message signal. 
+A point contact diode with low junction capacitance is used in the circuit as it is has to rectify high frequency carrier. It offers low impedence at high frequency. The RC elements connected after the diode acts as a filter. It acts as a lowpass filter which eliminates high frequency carrier at the same time it retains the low frequency message signal. 
 
-Thus the output of the filter contains the low fequency modulating signal with a dc offset. The dc offset voltage is proportional to the strength of the modulated signal received by the receiver in a transmission reception system, which inturn is proportional to the strength(amplitude) of the carrier. This dc value may be used for automatic gain control(AGC) of intermediate frequency(IF) amplifier stages. The Automatic gain control compensates for minor variations in the received RF signal level. The AGC circuit automatically increases the receiver gain for weak RF input levels and automatically decreases the receiver gain when strong RF signal is received\footnote{Fore detailed explanation, refer to Chapter 5 of \cite{Tomasi}}.
+Thus the output of the filter contains the low fequency modulating signal with a dc offset. The dc offset voltage is proportional to the strength of the modulated signal received by the receiver in a transmission reception system, which inturn is proportional to the strength(amplitude) of the carrier. This dc value may be used for automatic gain control(AGC) of intermediate frequency(IF) amplifier stages. The Automatic gain control compensates for minor variations in the received RF signal level. The AGC circuit automatically increases the receiver gain for weak RF input levels and automatically decreases the receiver gain when strong RF signal is received\footnote{For detailed explanation, refer to Chapter 5 of \cite{Tomasi}}.
 \paragraph{Simple AGC:} It is implemented in the form of a circuit which extracts the dc offset voltage which is present along with the demodulated message. This volatge is fed as degenerative or negtive feedback to the control the gain of superheterodyne receivers. 
 \paragraph{Delayed AGC:}In simple AGC circuits even if the signal level received is low, the AGC circuit operates and the overall gain of the receiver gets reduced. To avoid this situation, a delayed AGC circuit is used. In this case AGC bias voltage is not applied to amplifiers, until signal strength has reached a predetermined level after which AGC bias is applied like simple AGC.
 
@@ -29,7 +29,7 @@ f_H=\frac{1}{2\pi R_dC_d}
 \noindent Select $C_d=\ 0.001 \mu F$. Then $R_d=\ 16.1k\Omega$.
 Choose $R_d=\ 15k\Omega \ or\ 22k\Omega$ standard resistor values.\\
 
-\noindent Make a $\pi$ filter using these $R_d$ and $C_d$ values. This completes the envelope detector part.
+\noindent Make a $\pi$ filter (for better performance) using these $R_d$ and $C_d$ values. This completes the envelope detector part.
 \paragraph{AGC Circuit:} The AGC lowpass filter $R_a$ and $C_a$ is seected in such a way as to eliminate full ac from the output and get a pure dc AGC voltage. 
 Hence assuming a cutoff frequency of 10 Hz to eliminte the fluctuations,
 \begin{equation}
@@ -78,6 +78,7 @@ Connect the $\pi$ filter circuit of $R_d$ and $C_d$ and observe the output wavef
 Obtain the demodulated output without dc offset by connecting capacitor $C_3$. Observe it on a CRO and plot it.
 \item
 Connect the lowpass filter using $C_a$ and $R_a$ for obtaining AGC voltage level. Observe it on a CRO and plot it.
+\item Vary the modulation index by changing carrier or modulating signal levels. Plot the simple AGC charateristics with modulation index on x-axis and AGC voltage level on y-axis.
 \item
 Eliminte the dc offset and observe the modulating signal from the $10\mu F$ capacitor as shown in the circuit diagram.
 %\item
