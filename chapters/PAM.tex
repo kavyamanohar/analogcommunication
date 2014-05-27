@@ -5,17 +5,24 @@ To set-up and implement circuits to carry out pulse amplitude modulation. To des
 \section*{Theory}
 Pulse amplitude modulation is a kind of digital modulation technique in which analog message signal is sampled at constant frequency - \emph{carrier frequency}. A pulse of specified duration is used to sample the message signal. When the pulse is on, the message is sampled and when it is off no message is sampled. This is a basic step in the digitization of analog message signals. The circuits to be implemented in this experiment does a kind of natural sampling.\footnote{For more on natural sampling, refer Digital Transmission \cite{Tomasi}}.
 
-Waveforms showing pulse carriers whose amplitude is modulated buy message is shown in Figure \ref{PAMmod}. A simple way to implement this is to allow the message to be fed as the input to a switch and the switch ON/OFF time is controlled by the pulses at sampling frequency.
+Waveforms showing pulse carriers whose amplitude is modulated buy message is shown in Figure \ref{PAMmod1} and \ref{PAMmod2}. A simple way to implement this is to allow the message to be fed as the input to a switch and the switch ON/OFF time is controlled by the pulses at sampling frequency.
 
 The demodulation of PAM waveform can be implemented by using a lowpass filter which passes message signal frequenies but blocks the carrier signal.
 \begin{figure}[h]
-\includegraphics[width=\textwidth]{pam.png}
-\caption{PAM modulation}
-\label{PAMmod}
+\includegraphics[width=\textwidth]{pam1.png}
+\caption{PAM modulation using transistor}
+\label{PAMmod1}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{pam2.png}
+\caption{PAM modulation using switching IC}
+\label{PAMmod2}
 \end{figure}
 \section*{Design}
 \subsection*{PAM using transistor as a switch}
 One technique to implement PAM is to use transistr in switching mode. The flow of current from collector to emitter in a bipolar junction transistor is controlled by the voltage at its base. 
+
 
 \noindent Choose the transistor BC107. For more details on BC107 see \ref{BC107}.
 \noindent Apply the sinusoidal message signal of frequency $f_m < \ 1 \ kHz$ and amplitude $E_m<\ 10\ V_{pp}$ at the collector.
@@ -81,7 +88,8 @@ Observe the input and output waveforms from PAM generaton and demodulation circu
 
 \end{itemize}
 \section*{Observation}
-Plot the graphs of input and output waveforms as observed on a CRO.
+Plot the graphs of input and ou
+tput waveforms as observed on a CRO.
 \section*{Result}
 
 Implemented the PAM generation and demodulation circuits using BJT as well as switching IC.
