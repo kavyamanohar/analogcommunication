@@ -3,7 +3,7 @@
 \section*{Aim}
 To design and implement AM generation and demodulation using multiplier IC AD633.
 \section*{Theory}
-DSB-SC using AD633 has already been discussed in chapter \ref{chapdsbsc}. DSB-SC is same as AM devoid of the carrier. Inorder to obtain the pure AM waveform which is \emph{double side band with carrier}, add the carrier signal to the DSB-SC signal.
+DSB-SC using AD633 has already been discussed in chapter \ref{chapdsbsc}. DSB-SC is same as AM devoid of the carrier. Inorder to obtain the complete AM waveform which is \emph{double side band with carrier}, add the carrier signal to the DSB-SC signal. This can be done using the 633 multiplier IC. For more details on IC, refer \ref{AD633}.
 \begin{equation}
 W= \frac{X.Y}{10}+Z
 \end{equation}
@@ -43,7 +43,7 @@ W=& \frac{{E_c}^2}{20}+\frac{E_m.{E_c}^2}{200}sin(2\pi f_mt) \\
 Thus the signal consists of various frequencies of which, the smallest is the message frequency. It can be extracted by filtering using a low pass filter. Since the amplitude of the message frequency is very small, It may be amplified using a simple non-inverting amplifier using an opamp.
 
 \section*{Design}
-Provide the biasing voltage of +15 V to pin 8 of the IC and -15 V to pin 5 of the IC.\\
+Provide the supply voltage of +15 V to pin 8 of the IC and -15 V to pin 5 of the IC.\\
 
 \noindent To the \textbf{Y} and \textbf{Z} inputs of the IC, feed the carrier sinusoid of amplitude $E_c=2.5\ V$ and frequency $f_c= 100\ kHz$.\\
 To the \textbf{X} input of the IC, feed the message sinusoid of amplitude $E_m=2.5\ V$ and frequency $f_m= 1\ kHz$.\\
@@ -77,13 +77,13 @@ W=& \frac{6.25}{20} +\frac{15.625}{200}sin(2\pi 1kt)\\
 
 \noindent This waveform is shown in Figure \ref{AM633plot2}, which is the stage -1 in demodulation. The next step is to obtain the message signal. This is done by lowpass filtering the above signal at a cut-off frequency of 1.5 kHz.
 
-To design an RC lowpass filter of cut-off frequency 1kHz,
+To design an RC lowpass filter of cut-off frequency 1.5 kHz,
 
 \begin{equation}
 f_c=\frac{1}{2\pi R_1C_1}=1.5kHz
 \end{equation}
 Choose $C_1=0.01\  \mu F$
-$\therefore  R_1 =7.5 \ k \Omega$
+$\therefore  R_1 =10 \ k \Omega$
 
 A non-inverting amplifier may be used to amplify this signal. Using a feedback resistor of $R_f= 100 \ k \Omega$ and an input resistance of $R_i=10\ k\Omega$ will result in a gain of $A_v=1+\frac{R_f}{R_i}=11$.
 \section*{Circuit Diagram}
