@@ -4,7 +4,7 @@
 To design and set up a frequency modulating circuit using 555.
 
 \section*{Theory}
-Frequency modulation is a modulation technique in which the frequency of the carrier is varied in accordance with the message signal amplitude.
+Frequency modulation is an analog modulation technique in which the frequency of the carrier is varied in accordance with the message signal amplitude.
 Modulation index for FM is 
 \begin{equation}
 m= \frac{\delta f}{f_m}=\frac{frequency \ deviation}{modulating \ signal\  frequency}
@@ -35,9 +35,9 @@ f_c=\frac{0.72}{RC}
 R=\frac{0.72}{(10) (10^3)(0.01 X 10^-6)}= \ 6.8 k\Omega
 \end{equation}
 
-The amplitude of the modulationg signal should be limited by $\frac{2}{3}V_{cc}$.
+The amplitude of the modulationg signal should be limited by $\frac{2}{3}V_{cc}$. This is needed to avoid over modulation. The message signal should have a frequency less than 1 kHz.
 
-The dc biasing voltage of the IC, 
+The dc supply voltage of the IC, 
 \begin{equation}
 V_{cc}=12 V
 \end{equation}
